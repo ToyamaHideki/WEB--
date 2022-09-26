@@ -1,3 +1,17 @@
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(154, 130, 100);
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+
 header{
     position: fixed;
     top: 0;
@@ -12,7 +26,6 @@ header{
 
 ul {
     display: flex;
-   
 }
 
 li{
@@ -20,15 +33,12 @@ li{
     margin-right: 20px;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background-color: rgb(154, 130, 100);
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    color: white;
-    text-shadow: 0 0 5px rgba(0,0,0,0.6);
+
+a{
+    color: antiquewhite;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+a:hover{
+    color: rgb(70, 69, 67);
 }

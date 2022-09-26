@@ -1,0 +1,16 @@
+
+.cssSelector {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(138, 110, 110);
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.domSelector {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(138, 110, 110);
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
