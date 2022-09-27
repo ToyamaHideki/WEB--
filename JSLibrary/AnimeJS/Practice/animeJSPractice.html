@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ajsp.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Practice</h2>
+    </div>
+
+
+
+
+
+    <script src="./anime.min.js"></Script>
+    <script>
+        const container = document.querySelector(".container");
+
+
+        // block クラスのdivタグを５０個生成して containerクラスの子要素として配置する。
+        for(let i=0; i<=50; i++){
+            const blocks = document.createElement("div");
+            blocks.classList.add("block");
+            container.appendChild(blocks);
+        }
+
+        function animateBlocks(){
+            anime({
+                targets:".block",
+                translateX: function(){return anime.random(-1800,1800)},
+                translateY: function(){return anime.random(-1500,1500)},
+                scale:function(){return anime.random(1,5)},
+                duration:4000,
+                delay: anime.stagger(5),
+                // アニメが完了した時再度アニメ関数を呼び出すことで繰り返す事ができる。
+                complete:animateBlocks
+                        })
+        }
+        animateBlocks();
+    
+    </script>
+
+
+</body>
+</html>

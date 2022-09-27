@@ -1,0 +1,43 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(89,153,231,0.5);
+    position: relative;
+    /* はみ出た要素を隠す＝スクロール出来なくさせる */
+    overflow: hidden;
+}
+
+h2{
+    position: relative;
+    z-index: 100;
+    color: white;
+    font-size: 5rem;
+}
+
+.container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.block{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: green;
+    box-shadow: 10px 10px 50px rgba(0,0,0,0.2);
+}
