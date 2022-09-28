@@ -45,18 +45,17 @@
             <div class="manyPropaty"></div>
             <br>
 
+            <h4>配列要素を用いてアニメーションを順番に表示させる</h4>
+            <p>複数のプロパティを組み合わせるではdelayを用いて差を生ませていたが<br> 配列を用いる事で簡単に実装可能</p>
+
+            <div class="arrayPropaty"></div>
+
+
+
             <h4>オートプレイを実装</h4>
             <div class="autoPlay"></div>
             <br><br>
 
-            <h4>スタート機能とストップ機能を実装</h4>
-            <div id="playPause">
-
-                <div class="actionButton"></div>
-                <br><br>
-                <button class="start">START</button>
-                <button class="stop">STOP</button>
-            </div>
 
 
 
@@ -97,7 +96,7 @@
             },
             rotate: {
                 value: "1turn",
-                // delay:100,
+                delay: 100,
                 duration: 1800,
                 easing: 'easeInOutQuart'
             },
@@ -105,6 +104,22 @@
                 value: 1.2,
                 delay: 1000,
             }
+        });
+
+        // 配列を用いてアニメーションを順番に表示させる
+        // elasticity=弾性を持たせる
+        const arrayPropaty = document.querySelector(".arrayPropaty");
+        const arrayPropatyAnime = anime({
+            targets: arrayPropaty,
+            translateX: [
+                { value: 250, duration: 1000, delay: 500, elasticity: 500 },
+                // { value: 0, duration: 1000, delay: 500, elasticity: 0 }
+            ],
+            translateY: [
+                { value: -40, duration: 500, elasticity: 100 },
+                { value: 40, duration: 500, delay: 1000, elasticity: 100 },
+                { value: 0, duration: 500, delay: 1000, elasticity: 1000 }
+            ],
         })
 
         // オートプレイを実装
@@ -121,19 +136,7 @@
             easing: 'easeInOutSine'
         });
 
-        // スタートストップ機能
-        const aPlayEl = document.querySelector(".actionButton");
-        const aButtonAnime = anime({
-            target:aPlayEl,
-            translateX: 400,
-            direction: 'alternate',
-            autoplay: false,
-            loop: true,
-            delay: 100,
-            endDelay: 100,
-            easing: 'easeInOutSine'
-        })
-        document.querySelector("#playPause .play").onclick = aButtonAnime.play();
+
 
 
     </script>

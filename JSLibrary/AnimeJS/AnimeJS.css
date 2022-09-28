@@ -1,3 +1,12 @@
+div{
+    width: 100px;
+    height:100px;
+}
+
+.container{
+    width: 100%;
+    height: auto;
+}
 
 .cssSelector {
     width: 100px;
@@ -30,6 +39,13 @@
 }
 
 .actionButton{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(138, 110, 110);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.arrayPropaty{
     width: 50px;
     height: 50px;
     background-color: rgb(138, 110, 110);
