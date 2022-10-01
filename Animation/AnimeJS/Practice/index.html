@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="ajsp.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
@@ -32,9 +32,9 @@
         function animateBlocks(){
             anime({
                 targets:".block",
-                translateX: function(){return anime.random(-1800,1800)},
-                translateY: function(){return anime.random(-1500,1500)},
-                scale:function(){return anime.random(1,5)},
+                translateX: function(){return anime.random(-800,800)},
+                translateY: function(){return anime.random(-700,700)},
+                scale:function(){return anime.random(1,3)},
                 duration:4000,
                 delay: anime.stagger(5),
                 // アニメが完了した時再度アニメ関数を呼び出すことで繰り返す事ができる。

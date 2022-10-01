@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="res.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="animestyle.css">
+    <link rel="stylesheet" href="AnimeJS.css">
+    <title>AnimeJS</title>
+</head>
+
+<body>
+
+    <main>
+        <h2><a href="./Practice/index.html">実践編</a></h2>
+        <div class="container">
+            <fieldset>
+                <legend>プロパティの詳細</legend>
+                <h3>targets属性</h3>
+                任意のCSSセレクターを指定<br>
+                targets: .item etc...<br>
+                任意の DOM ノードまたはノードリストを指定できます。<br>
+                DOM ノード: targets: el.querySelector('.item') <br>
+                ノードリスト: targets: el.querySelectorAll('.item')
+            </fieldset>
+            <h3>ドキュメントを見て操作を真似てみる</h3>
+            <h4>CSSセレクター</h4>
+            <div class="cssSelector"></div>
+
+            <h4>DOMノード(JSからクラスを取得)</h4>
+            <div class="domSelector"></div>
+
+            <h4>複数のプロパティを組み合わせる</h4>
+            <br>
+            <div class="manyPropaty"></div>
+            <br>
+
+            <h4>配列要素を用いてアニメーションを順番に表示させる</h4>
+            <p>複数のプロパティを組み合わせるではdelayを用いて差を生ませていたが<br> 配列を用いる事で簡単に実装可能</p>
+
+            <div class="arrayPropaty"></div>
+
+
+
+            <h4>オートプレイを実装</h4>
+            <div class="autoPlay"></div>
+            <br><br>
+
+
+
+
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+        integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js"
+        integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
