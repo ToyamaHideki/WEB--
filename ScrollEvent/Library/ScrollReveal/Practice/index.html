@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ScrollReveal Practice</title>
+</head>
+
+<body>
+
+
+    <!-- Sec01 -->
+    <section class="sec_01">
+        <div class="container">
+            <div class="main_title">
+                ScrollReveal Practive
+            </div>
+            <div class="content">
+                <div class="image">
+                    <img src="./images/sample.jpg" alt="">
+                </div>
+                <div class="text_box">
+                    <h3>TOYAMA HIDEKI</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis molestias, odio voluptate
+                        repellat minima repellendus quibusdam impedit, earum iure assumenda quo quidem blanditiis quis
+                        corporis ipsam odit in cupiditate error.</p>
+                </div>
+            </div>
+
+            <div class="media_icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sec02 -->
+    <section class="sec_02">
+        <div class="container">
+            <div class="section_title">Section02</div>
+            <div class="content">
+                <div class="image">
+                    <img src="./images/sample.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h4 class="info_title"> Description</h4>
+                    <p class="info_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni tempore odio totam distinctio
+                        laboriosam animi eos corporis atque? Culpa, earum laborum. Magnam ipsa architecto itaque.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="sec_03">
+        <div class="container">
+            <h3 class="section_title">Section03</h3>
+            <div class="content">
+                <div class="media_info">
+                    <ul class="list">
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i>FaceBook</a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i>FaceBook</a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i>FaceBook</a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i>FaceBook</a></li>
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i>FaceBook</a></li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="./images/sample.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="https://kit.fontawesome.com/6fe5f3b5a6.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script >
+        ScrollReveal({ reset: false, distance: '60px',duration:1000 });
+        
+        // sec01
+        ScrollReveal().reveal('.main_title', { delay: 500, origin:"top"});
+        ScrollReveal().reveal('.sec_01 .image', { delay: 700, origin:"left"});
+        ScrollReveal().reveal('.sec_01 .text_box', { delay: 800, origin:"right"});
+        ScrollReveal().reveal('.sec_01 .media_icons i', { delay: 900,interval:200, origin:"bottom"});
+        // sec02
+        ScrollReveal().reveal('.section_title', { delay: 200,opacity:0,distance:0 });
+        ScrollReveal().reveal('.sec_02 .image', { delay: 300, origin:"left"});
+        ScrollReveal().reveal('.sec_02 .info', { delay: 400, origin:"right"});
+        // sec03
+        ScrollReveal().reveal('.sec_03 .image', { delay: 200,origin:"right"});
+        ScrollReveal().reveal('.sec_03 .media_info .list li', { delay: 400,origin:"left",interval:200});
+
+
+
+
+        // ScrollReveal().reveal('.content .image', { delay: 700, origin:"left"});
+
+
+    </script>
+</body>
+
+</html>
