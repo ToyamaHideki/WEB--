@@ -1,0 +1,151 @@
+body {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/* practice */
+
+.circles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #a6bba6;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+
+/* 重要　中心に全てを揃える方法 */
+.circle0 {
+    width: 1000px;
+    height: 1000px;
+    margin: -500px 0 0 -500px;
+    background-color: rgb(61, 50, 215);
+    z-index: 10;
+}
+
+.circle1 {
+    width: 700px;
+    height: 700px;
+    margin: -350px 0 0 -350px;
+    background-color: green;
+    z-index: 10;
+}
+
+.circle2 {
+    width: 500px;
+    height: 500px;
+    margin: -250px 0 0 -250px;
+    background-color: red;
+    z-index: 20;
+}
+
+.circle3 {
+    width: 300px;
+    height: 300px;
+    margin: -150px 0 0 -150px;
+    background-color: purple;
+    z-index: 30;
+}
+
+.cursor {
+    position: fixed;
+    background-color: blue;
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+    z-index: 40;
+}
+
+.practice__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    /* ここが面白い */
+    mix-blend-mode: screen;
+
+}
+
+.practice__content h1 {
+    font-weight: 800;
+    font-size: 9rem;
+}
+
+/* sec01 */
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: white;
+    opacity: 0;
+}
+
+.text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    opacity: 0;
+}
+
+
+/* sec02 */
+
+.sec02__content {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.block {
+    display: flex;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    background-color: #a6bba6;
+}
