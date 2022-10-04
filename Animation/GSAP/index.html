@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <section class="pratice">
         <div class="container">
             <div class="circles">
@@ -27,6 +28,20 @@
     </section>
 
 
+    <!-- fromToアニメーション実装 -->
+    <section class="practice02">
+        <div class="p02__container">
+            <div class="p02__hero__content">
+                <div class="image">
+                    <img src="./images/sample.jpg" alt="">
+                </div>
+                <h1 class="p02__h1">Beautiful</h1>
+            </div>
+            <div class="slider"></div>
+        </div>
+    </section>
+
+
 
     <section class="sec01">
         <div class="container">
@@ -37,12 +52,12 @@
         </div>
     </section>
 
-    <h1>スクロール</h1>
-    <section class="sec02">
-        <div class="container">
-            <div class="sec02__content">
 
-            </div>
+    <section class="sec02">
+        <h1>fromToで設定するアニメーション</h1>
+        <div class="container">
+            <div class="sec02__content"> </div>
+            <div class="sec02__content__hover"></div>
         </div>
     </section>
 
@@ -72,9 +87,39 @@
 
 
 
+        // PRACTICE02
+        const image = document.querySelector(".image");
+        const slider = document.querySelector(".slider");
+        const p02H1 = document.querySelector(".p02__h1");
+        let tl = gsap.timeline();
+
+
+        tl.fromTo(image, 1, {
+            height: "0%",
+            ease: Power4.easeInOut,
+        }, {
+            height: "40%"
+        }).fromTo(image, 0.5, {
+            width:"100%"
+        }, {
+            width: "80%"
+        }).fromTo(slider,1,{
+            y:"-100%"
+        },{
+            y:"0"
+        },"-=0.5").fromTo(p02H1,1,{
+            opacity:0,
+            y:10
+        },{
+            opacity:1,
+            y:0,
+        },"-=.5")
+
+
+
 
         // sec01 Area
-        let tl = gsap.timeline();
+        // let tl = gsap.timeline();
         tl.to(".content", { backgroundColor: "black", duration: 1 })
             .to(".title", { ease: "power4.inOut", opacity: 1, duration: 1 })
             .to(".text", { ease: "power4.inOut", duration: 1, opacity: 1 })
@@ -83,48 +128,74 @@
         // sec02
         const sec02 = document.querySelector(".sec02__content");
 
+        const sec02Hover = document.querySelector(".sec02__content__hover");
+
 
         // block クラスのdivタグを５０個生成して containerクラスの子要素として配置する。
-        for (let i = 0; i <=300; i++) {
+        for (let i = 0; i <= 99; i++) {
             const blocks = document.createElement("div");
             blocks.classList.add("block");
             sec02.appendChild(blocks);
         };
 
+
+
         gsap.fromTo(
 
             ".block",
             {
-                duration: 5,
-                scale: 1,
-                // y: 500,
-                yoyo: true, 
+                duration: 2,
+                scale: 0,
                 ease: "power1.inOut",
                 stagger: {
                     each: 10,
-                    grid: [16, 19],
+                    // グリット要素の縦横を合わせる
+                    grid: [10, 10],
+                    // グリットに対して真ん中を指定（上の縦横数があってないときれいにアニメーションしない）
                     from: "center",
-                    ease: "power2.in",
+                    ease: "power4.in",
                     amount: 0.5,
-                    repeat:-1
-            }
-        },{
-                duration: 5,
-                scale: 0.1,
-                // y: 500,
-                yoyo: true, 
-                ease: "power1.inOut",
-                stagger: {
-                    each: 10,
-                    grid: [16, 19],
-                    from: "center",
-                    ease: "power2.in",
-                    amount: 0.5,
-                    repeat:-1
                 }
-               
+            }, {
+            duration: 2,
+            scale: 1,
+            ease: "power1.inOut",
+            stagger: {
+                each: 10,
+                grid: [10, 10],
+                from: "center",
+                ease: "ease-in-out",
+                amount: 0.5,
+                repeat: -1
+            }
+
+        });
+
+
+        for (let i = 0; i <= 500; i++) {
+            const blocks = document.createElement("div");
+            blocks.classList.add(`hoverBlock`);
+            blocks.classList.add(`hoverBlock${i}`);
+            sec02Hover.appendChild(blocks);
+
+            blocks.addEventListener("mouseover", () => {
+                gsap.from(`.hoverBlock${i}`, {
+                    duration: 2,
+                    scale: 1.2,
+                    ease: "power4.inOut",
+                    backgroundColor: "red",
+                }
+                    //  ,{
+                    //     duration:2,
+                    //     scale:0,
+                    //     ease:"power4.inOut",
+                    //     backgroundColor:"#a6bba6",
+                    // }
+                )
             });
-        
+        }
+
+
 
 
 
