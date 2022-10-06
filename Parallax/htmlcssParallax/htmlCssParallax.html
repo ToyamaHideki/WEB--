@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../res.css">
+    <title>HTMLとCSSのみでパラパックス(初級)</title>
+
+    <style>
+        .box {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            /* 文字を中央に寄せる */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+
+            background-size: cover;
+            background-position: center;
+            /* これだけでパララックス実装可能 */
+            background-attachment: fixed;
+        }
+
+        .box::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+            content: "";
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .box1 {
+            background-image: url("./images/spring.jpg");
+        }
+
+        .box2 {
+            background-image: url("./images/summer.jpg");
+        }
+
+        .box3 {
+            background-image: url("./images/autum.jpg");
+        }
+
+        .box4 {
+            background-image: url("./images/winter.jpg");
+        }
+
+        .box h2 {
+            position: relative;
+            z-index: 10;
+            font-size: 100px;
+            color: white;
+            top: 100px;
+            /* text-shadow: 1px 1px 0 black, -1px -1px 0 black,
+                -1px 1px 0 black, 1px -1px 0 black,
+                0px 1px 0 black, 0-1px 0 black,
+                -1px 0 0 black, 1px 0 0 black; */
+            text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+        }
+
+        .outline{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:90%;
+            height: 90%;
+            border: 20px solid white;
+            z-index: 20;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box box1">
+        <div class="outline"></div>
+        <h2>SPRING</h2>
+    </div>
+    <div class="box box2">
+        <div class="outline"></div>
+        <h2>SUMMER</h2>
+    </div>
+    <div class="box box3">
+        <div class="outline"></div>
+        <h2>AUTUM</h2>
+    </div>
+    <div class="box box4">
+        <div class="outline"></div>
+        <h2>WINTER</h2>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.set("h2", { autoAlpha: 0, y: -60 })
+        ScrollTrigger.batch("h2", {
+            onEnter: batch => gsap.to(batch, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 2,
+                once: true,
+                markers: true
+            })
+        })
+    </script>
+</body>
+
+</html>

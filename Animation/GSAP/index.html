@@ -61,147 +61,50 @@
         </div>
     </section>
 
+    <section class="sec03">
+        <h1>ScrollTrigger</h1>
+        <div class="sbox_single sbox"></div>
+
+        <div class="sbox__group">
+            <div class="a sbox"></div>
+            <div class="b sbox"></div>
+            <div class="c sbox"></div>
+        </div>
+
+        <h1>セクションを対象に設定し、子要素をバッチとして指定する</h1>
+        <!-- <div class="sbox__group">
+            <div class="a sbox_batch"></div>
+            <div class="b sbox_batch"></div>
+            <div class="c sbox_batch"></div>
+         </div> -->
+
+        <div class="sbox__group">
+            <div class="colum">
+                <div class="a sbox_batch"></div>
+                <div class="b sbox_batch"></div>
+                <div class="c sbox_batch"></div>
+                <div class="a sbox_batch"></div>
+                <div class="b sbox_batch"></div>
+                <div class="c sbox_batch"></div>
+                <div class="a sbox_batch"></div>
+                <div class="b sbox_batch"></div>
+                <div class="c sbox_batch"></div>
+        </div>
+
+
+    </section>
+
+
+    <section class="sec03">
+        <div class="container">
+
+        </div>
+
+    </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/gsap@3.7.0/dist/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
-    <script>
-
-        // practice Area
-        // マウスの動きに合わせて座標を取得
-        document.addEventListener("mousemove", (e) => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-            //　座標を登録する
-            gsap.to(".circle", {
-                x: mouseX,
-                y: mouseY,
-                // プラスとマイナスで動きが反転する
-                stagger: -0.05,
-            })
-
-            gsap.set(".cursor", {
-                x: mouseX,
-                y: mouseY,
-            })
-
-        })
-
-
-
-        // PRACTICE02
-        const image = document.querySelector(".image");
-        const slider = document.querySelector(".slider");
-        const p02H1 = document.querySelector(".p02__h1");
-        let tl = gsap.timeline();
-
-
-        tl.fromTo(image, 1, {
-            height: "0%",
-            ease: Power4.easeInOut,
-        }, {
-            height: "40%"
-        }).fromTo(image, 0.5, {
-            width:"100%"
-        }, {
-            width: "80%"
-        }).fromTo(slider,1,{
-            y:"-100%"
-        },{
-            y:"0"
-        },"-=0.5").fromTo(p02H1,1,{
-            opacity:0,
-            y:10
-        },{
-            opacity:1,
-            y:0,
-        },"-=.5")
-
-
-
-
-        // sec01 Area
-        // let tl = gsap.timeline();
-        tl.to(".content", { backgroundColor: "black", duration: 1 })
-            .to(".title", { ease: "power4.inOut", opacity: 1, duration: 1 })
-            .to(".text", { ease: "power4.inOut", duration: 1, opacity: 1 })
-
-
-        // sec02
-        const sec02 = document.querySelector(".sec02__content");
-
-        const sec02Hover = document.querySelector(".sec02__content__hover");
-
-
-        // block クラスのdivタグを５０個生成して containerクラスの子要素として配置する。
-        for (let i = 0; i <= 99; i++) {
-            const blocks = document.createElement("div");
-            blocks.classList.add("block");
-            sec02.appendChild(blocks);
-        };
-
-
-
-        gsap.fromTo(
-
-            ".block",
-            {
-                duration: 2,
-                scale: 0,
-                ease: "power1.inOut",
-                stagger: {
-                    each: 10,
-                    // グリット要素の縦横を合わせる
-                    grid: [10, 10],
-                    // グリットに対して真ん中を指定（上の縦横数があってないときれいにアニメーションしない）
-                    from: "center",
-                    ease: "power4.in",
-                    amount: 0.5,
-                }
-            }, {
-            duration: 2,
-            scale: 1,
-            ease: "power1.inOut",
-            stagger: {
-                each: 10,
-                grid: [10, 10],
-                from: "center",
-                ease: "ease-in-out",
-                amount: 0.5,
-                repeat: -1
-            }
-
-        });
-
-
-        for (let i = 0; i <= 500; i++) {
-            const blocks = document.createElement("div");
-            blocks.classList.add(`hoverBlock`);
-            blocks.classList.add(`hoverBlock${i}`);
-            sec02Hover.appendChild(blocks);
-
-            blocks.addEventListener("mouseover", () => {
-                gsap.from(`.hoverBlock${i}`, {
-                    duration: 2,
-                    scale: 1.2,
-                    ease: "power4.inOut",
-                    backgroundColor: "red",
-                }
-                    //  ,{
-                    //     duration:2,
-                    //     scale:0,
-                    //     ease:"power4.inOut",
-                    //     backgroundColor:"#a6bba6",
-                    // }
-                )
-            });
-        }
-
-
-
-
-
-
-
-    </script>
 </body>
 
 </html>

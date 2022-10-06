@@ -8,6 +8,10 @@ section {
     height: 100vh;
     overflow: hidden;
 }
+.sec03{
+    overflow: scroll;
+    height: auto;
+}
 
 .container {
     width: 100%;
@@ -207,7 +211,7 @@ section {
 }
 
 .sec02__content__hover{
-    width: 100%;
+   max-width: 1000px;
     max-height: 500px;
     margin: 0 auto;
     display: flex;
@@ -236,3 +240,39 @@ section {
 
 }
 
+/* ScrollTrigger */
+.sbox_group{
+    height: 500vh;
+}
+.sbox{
+    width: 100px;
+    height: 100px;
+    margin-bottom:100px;
+    border-radius: 10px;
+}
+
+.sbox_batch{
+    width: 100px;
+    height: 100px;
+    margin-bottom:100px;
+    border-radius: 10px;
+}
+
+.colum{
+    display: flex;
+    flex-wrap: wrap;
+    column-count:3;
+
+    gap: 10px;
+}
+
+
+.a{
+    background-color: antiquewhite;
+}
+.b{
+    background-color: aquamarine;
+}
+.c{
+    background-color: black;
+}
